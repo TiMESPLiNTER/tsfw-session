@@ -7,4 +7,4 @@
 // Prevent output from sending directly to the CLI because we use functions which send headers
 ob_start();
 
-require '../vendor/autoload.php';
+require __DIR__ . '/../vendor/autoload.php';
