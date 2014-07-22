@@ -31,9 +31,6 @@ class TrustedSessionTest extends \PHPUnit_Framework_TestCase {
 
 		$currentSessionId = $trustedSession->getID();
 
-		/*$this->assertEquals(true, $trustedSession->regenerateID(true), 'Regenerate ID');
-		$this->assertEquals(true, $trustedSession->regenerateID(), 'Regenerate ID lazy');*/
-
 		// Simulate a session hijacking
 		$_SERVER['REMOTE_ADDR'] = '192.168.1.102';
 
