@@ -1,0 +1,30 @@
+{
+	"name": "timesplinter/tsfw-session",
+	"type": "library",
+	"description": "A library to provide an OO interface for PHPs session handling",
+	"keywords": ["tsfw", "session"],
+	"homepage": "http://github.com/TiMESPLiNTER/tsfw-session",
+	"license": "LGPL",
+	"require": {
+		"php": ">=5.4.0"
+	},
+
+	"autoload": {
+		"psr-4": {
+			"timesplinter\\": "src/timesplinter/"
+		}
+	},
+
+	"authors": [
+		{
+			"name": "Pascal Muenst",
+			"email": "dev@timesplinter.ch",
+			"homepage": "http://www.timesplinter.ch",
+			"role": "Company"
+		}
+	],
+
+	"require-dev": {
+		"phpunit/phpunit": "3.7.*"
+	}
+}
