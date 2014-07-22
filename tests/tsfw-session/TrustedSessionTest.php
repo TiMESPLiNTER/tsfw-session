@@ -37,6 +37,6 @@ class TrustedSessionTest extends \PHPUnit_Framework_TestCase {
 		// Hijacker will do a session start with a new request
 		$this->assertEquals(true, $trustedSession->start(), 'Start hijacked session');
 		$this->assertNotEquals($currentSessionId, $trustedSession->getID(), 'Hijacked session should get a new ID');
-		$this->assertEquals(true, $trustedSession->isTrusted(), 'Is hijacked session trusted (hope not)');
+		$this->assertEquals(true, $trustedSession->isTrusted(), 'Is hijacked session trusted (it should because it\'s a new session)');
 	}
 }
