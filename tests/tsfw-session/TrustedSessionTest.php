@@ -18,7 +18,7 @@ class TrustedSessionTest extends \PHPUnit_Framework_TestCase {
 	}
 
 
-	public function testSessionStart() {
+	public function testTrustedSession() {
 		$currentSessionId = session_id();
 
 		$trustedSession = new TrustedSession();
