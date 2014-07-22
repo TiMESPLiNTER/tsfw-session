@@ -7,4 +7,4 @@ php:
 script: phpunit --configuration tests/phpunit.xml
 install:
     - composer self-update
-    - composer update --prefer-dist
+    - composer install
