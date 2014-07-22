@@ -5,7 +5,7 @@ namespace timesplinter\tsfw\session;
 /**
  * This is an extension to the basic Session class which ensures that the currently active session is one that can
  * be trusted in it.
- * @author Pascal Muenst <dev@metanet.ch>
+ * @author Pascal Muenst <dev@timesplinter.ch>
  * @copyright Copyright (c) 2014, TiMESPLiNTER Webdevelopment
  */
 class TrustedSession extends Session {
