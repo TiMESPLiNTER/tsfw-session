@@ -24,9 +24,11 @@ class TrustedSessionTest extends \PHPUnit_Framework_TestCase {
 		$trustedSession = new TrustedSession();
 
 		$this->assertEquals(false, $trustedSession->isTrusted(), 'Is session trusted (hope not)');
+		$this->assertEquals(true, $trustedSession->isExpired(), 'Is the session expired (it should be)');
 		$this->assertEquals(true, $trustedSession->start(), 'Start session');
 
 		$this->assertEquals(true, $trustedSession->isTrusted(), 'Is session trusted (now it should)');
+		$this->assertEquals(false, $trustedSession->isExpired(), 'Is the session expired (now it should not)');
 		$this->assertNotEquals($currentSessionId, $trustedSession->getID(), 'Session ID should be different');
 
 		$currentSessionId = $trustedSession->getID();
@@ -38,5 +40,9 @@ class TrustedSessionTest extends \PHPUnit_Framework_TestCase {
 		$this->assertEquals(true, $trustedSession->start(), 'Start hijacked session');
 		$this->assertNotEquals($currentSessionId, $trustedSession->getID(), 'Hijacked session should get a new ID');
 		$this->assertEquals(true, $trustedSession->isTrusted(), 'Is hijacked session trusted (it should because it\'s a new session)');
+		
+		// Check get/set session idling time
+		$trustedSession->setIdlingTime(5);
+		$this->assertEquals(5, $trustedSession->getIdlingTime(), 'Idling time should now be 5 seconds');
 	}
 }
